@@ -1,0 +1,4 @@
+enum Statuttask {
+  completed,
+  notStarted
+}
