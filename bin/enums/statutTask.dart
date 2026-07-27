@@ -1,4 +1,1 @@
-enum Statuttask {
-  completed,
-  notStarted
-}
+enum Statuttask { completed, notStarted }

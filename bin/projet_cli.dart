@@ -6,19 +6,17 @@ import 'dart:io';
 import 'enums/priority.dart';
 
 void main(List<String> arguments) {
-
   print('bonjour et bienvenue dans le gestionnaire de taches');
 
   bool quitter = true;
 
   Repository<Task> repository = Repository<Task>();
 
- 
-  while(quitter){
+  while (quitter) {
     print('Veuillez choisir une option:');
     print('1. Ajouter une tâche');
     print('2. Supprimer une tâche');
-    print('3. Afficher toutes les tâches'); 
+    print('3. Afficher toutes les tâches');
     print('4. Marquer une tâche comme terminée');
     print('5. Sauvegarder les tâches dans un fichier');
     print('6. Charger les tâches depuis un fichier');
@@ -30,14 +28,17 @@ void main(List<String> arguments) {
         String title = stdin.readLineSync() ?? '';
         print("entrez la priorité de la tâche (low, medium, high):");
         String priorityInput = stdin.readLineSync() ?? '';
-        
-        Task task = (priorityInput.toLowerCase() == 'high') ? UrgentTask(title, Priority.HIGH) : NormalTask(title, Priority.LOW);
-        
+
+        Task task = (priorityInput.toLowerCase() == 'high')
+            ? UrgentTask(title, Priority.HIGH)
+            : NormalTask(title, Priority.LOW);
 
         repository.addItem(task);
-        print("Tâche ajoutée avec succès: ${task.title}, priorité: ${task.priority}\n");
+        print(
+          "Tâche ajoutée avec succès: ${task.title}, priorité: ${task.priority}\n",
+        );
         break;
-      
+
       case '2':
         print("entrez l'ID de la tâche à supprimer:");
         int id = int.tryParse(stdin.readLineSync() ?? '0') ?? 0;
@@ -88,7 +89,4 @@ void main(List<String> arguments) {
         print('Option invalide. Veuillez réessayer.');
     }
   }
-
-
-  
 }

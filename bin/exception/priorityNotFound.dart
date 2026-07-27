@@ -1,4 +1,4 @@
-class PriorityNotFound implements Exception{
+class PriorityNotFound implements Exception {
   String message;
   PriorityNotFound(this.message);
 

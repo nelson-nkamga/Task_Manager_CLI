@@ -1,5 +1,4 @@
-
-class TaskNotFound  implements Exception{
+class TaskNotFound implements Exception {
   String message;
   TaskNotFound(this.message);
 
