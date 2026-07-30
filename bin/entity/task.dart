@@ -7,7 +7,22 @@ abstract class Task implements TaskContract {
   int id = 0;
 
   String title;
+
+  @override
   Priority priority;
+
+  // convert an object to a json
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'priority': priority.toString(),
+      'status': status.toString(),
+      'dueDate': dueDate.toIso8601String(),
+    };
+  }
+
   Statuttask status = Statuttask.notStarted;
   DateTime dueDate = DateTime.now();
 
@@ -25,15 +40,7 @@ abstract class Task implements TaskContract {
     }
   }
 
-  // convert an object to a json
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'priority': priority.toString(),
-      'status': status.toString(),
-      'dueDate': dueDate.toIso8601String(),
-    };
-  }
+  
+
+   
 }

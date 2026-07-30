@@ -1,11 +1,6 @@
 abstract class Identifiable {
-  int id = 0;
+  int get id;
 
-  // int getId() {
-  //   return id;
-  // }
+  set id(int value);
 
-  // void setId(int newId) {
-  //   id = newId;
-  // }
 }

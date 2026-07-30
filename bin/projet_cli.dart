@@ -47,13 +47,16 @@ void main(List<String> arguments) {
 
       case '3':
         print("Voici la liste des tâches:");
+        repository.sortByPriority();
         repository.getItems().forEach((task) => task.displayTaskDetails());
         print('liste des tâches affichée');
         break;
 
       case '4':
         print("entrez l'ID de la tâche à marquer comme terminée:");
-        int id = int.parse(stdin.readLineSync() ?? '0');
+        //int id = int.parse(stdin.readLineSync() ?? '0');
+        int id = int.tryParse(stdin.readLineSync() ?? '0') ?? 0;
+
         //Repository<Task> repository = Repository<Task>();
         repository.getItems().forEach((task) {
           if (task.id == id) {

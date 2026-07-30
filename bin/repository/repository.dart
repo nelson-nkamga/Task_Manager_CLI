@@ -2,6 +2,8 @@ import '../interface/taskContract.dart';
 import 'dart:io';
 import 'dart:convert';
 import '../exception/taskNotFound.dart';
+import '../entity/task.dart';
+import '../enums/priority.dart';
 
 class Repository<T extends TaskContract> {
   List<T> items = [];
@@ -28,6 +30,12 @@ class Repository<T extends TaskContract> {
     } catch (e) {
       print('Error removing item: $e');
     }
+  }
+
+  // sort methode
+ 
+  void sortByPriority(){
+    items.sort((a,b) => a.priority.index.compareTo(b.priority.index));
   }
 
   List<T> getItems() {

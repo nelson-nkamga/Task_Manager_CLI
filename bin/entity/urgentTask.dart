@@ -25,7 +25,7 @@ class UrgentTask extends Task {
       (e) => e.toString() == json['status'],
     );
 
-    task.dueDate = DateTime.parse(json['dueDate']);
+    //task.dueDate = DateTime.parse(json['dueDate']);
 
     return task;
   }
