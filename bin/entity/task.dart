@@ -39,8 +39,4 @@ abstract class Task implements TaskContract {
       print('La tâche a été marquée comme terminée.\n');
     }
   }
-
-  
-
-   
 }

@@ -33,9 +33,9 @@ class Repository<T extends TaskContract> {
   }
 
   // sort methode
- 
-  void sortByPriority(){
-    items.sort((a,b) => a.priority.index.compareTo(b.priority.index));
+
+  void sortByPriority() {
+    items.sort((a, b) => a.priority.index.compareTo(b.priority.index));
   }
 
   List<T> getItems() {

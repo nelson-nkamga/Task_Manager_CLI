@@ -7,7 +7,6 @@ import '../bin/enums/priority.dart';
 
 void main() {
   test('save and load task to/from json file', () async {
-
     final tempDir = await Directory.systemTemp.createTemp();
     final filePath = '${tempDir.path}/file_test.json';
 
@@ -18,13 +17,10 @@ void main() {
     repository1.saveToFile(filePath);
 
     final repository2 = Repository<NormalTask>();
-    repository2.loadFromFile(
-      filePath,
-      (json) => NormalTask.fromJson(json),
-    );
+    repository2.loadFromFile(filePath, (json) => NormalTask.fromJson(json));
 
     expect(repository2.getItems().length, equals(1));
 
-     await tempDir.delete(recursive: true);
+    await tempDir.delete(recursive: true);
   });
 }
